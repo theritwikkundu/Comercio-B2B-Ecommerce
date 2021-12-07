@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap');
+
+html *
+{
+    
+    font-family: 'Work Sans' !important;
+}
+body{
+    overflow-x:hidden;
+    max-width: 100%;
+    margin:0;
+    margin-bottom: 150px;
+    background-color: #eae8dc !important;
+}
+
+.same{
+    width: 50%;
+    margin: 0px auto;
+    
+}
+.goToSignIn{
+    width: 50%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+}
+.alreadyAccount{
+    display: none;
+    
+}
+.wrongInfo{
+    display: none;
+    
+}
+.suh{
+    margin: 15% auto 2% auto;
+    
+}
+.but{
+    margin: 1% auto 1% auto;
+}
+#footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;
+    background:#6cf;
+ }
+ .grid{
+     margin: 2% 0% 0% 0%;
+ }
+.cardstyling{
+    margin: 0% 0% 2% 0%;
+} 
+.validate{
+    max-height: 300px;
+    max-width: 300px;
+    overflow: scroll;
+}
+.activeUser{
+    display: none;
+}
+#postad{
+    display: none;
+}
+#greetUser{
+    display: none;
+}
+#search{
+     
+    height: 70%;
+}
+#searchBtn{
+    display: none;
+}
+.userProfile{
+    display: none;
+}
+.userAds{
+    display: none;
+}
+.category{
+    color: gray;
+}
+.favourite{
+    display: none;
+}
+.text-messages{
+    color: gray;
+}
+
+.navbar-brand{
+    font-family: 'Oleo Script Swash Caps' !important;
+    font-size: 30px !important;
+}
+
+#navbar{
+    background-color: #e85a4f !important;
+}
+
+footer {
+    clear: both;
+    position: relative;
+    height: 200px;
+    margin-top: -200px;
+}
+
+.signupButton {
+    color: #e98074;
+    background-color: Transparent;
+}
+
+#loginBtn{
+    background-color: #d8c3a5;
+    border: 1px solid #8e8d8a !important;
+}
+
+#primaryBtn{
+    background-color: #d8c3a5 !important;
+    border: none !important;
+    color: #3a3a3a !important;
+    width: 8rem;
+}
+
+#secondaryBtn{
+    background-color: #e98074 !important;
+    border: none !important;
+    color: #ffffff !important;
+}

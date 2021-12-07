@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <link rel="icon" href="images/Comercio-Logo.png" type="icon" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+      crossorigin="anonymous"
+    />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Commercio</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link"
+                ><input
+                  class="form-control border-secondary py-2"
+                  type="search"
+                  name="search"
+                  id="search"
+                  placeholder="Search Ads"
+                  onkeyup="searchFunction()"
+              /></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                class="favourite"
+                style="display: none"
+                href="favourite.html"
+                id="favourite"
+                >Favourites</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="postad" href="submitad.html"
+                >New Post</a
+              >
+            </li>
+            <li class="activeUser nav-item" id="pending">
+              <a class="nav-link" href="pending.html">Admin</a>
+            </li>
+            <!-- <li class="activeUser nav-item" id="userProf">
+              <a class="nav-link" class="userProfile" href="userprofile.html" id="userProfile">Profile</a>
+            </li> -->
+            <li class="nav-item" class="inActiveUser" id="inActiveUser">
+              <a class="nav-link" href="signin.html">Login</a>
+            </li>
+            <li class="activeUser nav-item" id="activeUser">
+              <a class="nav-link" href="index.html" onclick="signOut()"
+                >Sign Out</a
+              >
+            </li>
+            <li class="activeUser nav-item"  id="userProf">
+              <a
+                class="nav-link"
+                class="userProfile"
+                href="userprofile.html"
+                id="userProfile"
+              ><img src='images/user-avatar.png' height='36rem'></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Categories -->
+    <h1 class="suh text-center text-dark">Products</h1>
+    <div class="container">
+      <div class="form-group">
+        <label for="category"><b>Select Category</b></label>
+        <select
+          onchange="selectCategory()"
+          name="category"
+          id="homePageCategorySelection"
+          class="form-control"
+          id="category"
+        >
+          <option>All Categories</option>
+          <option>Accessories</option>
+          <option>Chemicals</option>
+          <option>Machineries</option>
+          <option>Metals</option>
+          <option>Textiles</option>
+          <option>Miscellaneous</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Bootstrap Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="messages-text" class="col-form-label"
+                  >Messages:</label
+                >
+                <div class="modal-body" id="messages-text">
+                  <p id="modal-list"></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="recipient-messege" class="col-form-label"
+                  >Type Your Message Here</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="recipient-messege"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="sendMessage()"
+            >
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ads -->
+    <div class="container" id="container">
+      <div class="row" id="row"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="grid py-5 bg-dark" style="background-color: #696969 !important;">
+      <div class="container">
+        <address style="color:white;Text-Align:center">
+          <b>Copyright &copy</b><br>
+          Ritwik Kundu | 19BCE0547</br>
+          Manishraj Khan | 19BCE0737
+        </address>
+      </div>
+    </footer>
+
+    <!-- main -->
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script>
+      var config = {
+        apiKey: "AIzaSyDF7I1sGx6YuT60KLkHVdRLIxp814dKlHw",
+        authDomain: "ecommerce-test-a26fc.firebaseapp.com",
+        databaseURL: "https://ecommerce-test-a26fc-default-rtdb.firebaseio.com",
+        projectId: "ecommerce-test-a26fc",
+        storageBucket: "ecommerce-test-a26fc.appspot.com",
+        messagingSenderId: "690458204945",
+        appId: "1:690458204945:web:674ed644f21a1ca5d64ab0",
+        measurementId: "G-W3VEWVWQQ0",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(config);
+    </script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+      integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="signup.js"></script>
+    <script src="signin.js"></script>
+    <script src="submitad.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
