@@ -16,7 +16,7 @@ function signOut(){
       // document.getElementById("greetUser").style.display="block";
       // document.getElementById("greetUser").style.color="yellow";
       // document.getElementById("greetUser").innerHTML = `Welcome ${firebase.auth().currentUser.displayName} !`;
-      document.getElementById(`titlepage`).innerHTML = firebase.auth().currentUser.displayName;
+      // document.getElementById(`titlepage`).innerHTML = firebase.auth().currentUser.displayName;
       // document.getElementById("userProfile").innerHTML=firebase.auth().currentUser.displayName;
       document.getElementById(`suh`).innerHTML = `Ads By ${firebase.auth().currentUser.displayName}`
 
@@ -62,13 +62,12 @@ function signOut(){
    return`
     <div class="cardstyling col-lg-4 col-sm-6 portfolio-item">
       <div class="card h-100">
-        <small>${data.displayName}</small>
-        <img class="validate card-img-top" src=${data.url} />
+        <img class="validate card-img-top" src=${data.url} style="padding: 1rem !important"/>
         <div class="card-body">
         <h3 class="card-title">${data.title}</h3>
         <h4 class="category">${data.category}</h4>
         <p class="validate card-text">${data.description}</p>
-        <h5>Rs. ${data.price}</h5>
+        <h5>&#8377; ${data.price}</h5>
         <button type="button" class="btn btn-danger" onclick="deleteAd('${key}',this)">Delete</button>
         </div>
       </div>

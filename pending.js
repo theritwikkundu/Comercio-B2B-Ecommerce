@@ -67,13 +67,13 @@ function adCard(data, key) {
   return `
 <div class="cardstyling col-lg-4 col-sm-6 portfolio-item">
     <div class="card h-100">
-        <small>${data.displayName}</small>
-        <img class="validate card-img-top" src=${data.url} />
+        <p> &nbsp; &nbsp; <small>${data.displayName}</small></p>
+        <img class="validate card-img-top" src=${data.url} style="padding: 1rem !important"/>
         <div class="card-body">
             <h3 class="card-title">${data.title}</h3>
             <h4 class="category">${data.category}</h4>
             <p class="validate card-text">${data.description}</p>
-            <h5>${data.price}</h5>
+            <h5>&#8377; ${data.price}</h5>
             <button type="button" class="btn btn-danger" onclick="markVerified('${data.url}',this)">Mark as verified</button>
         </div>
     </div>

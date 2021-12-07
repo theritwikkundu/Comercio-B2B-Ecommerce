@@ -49,7 +49,7 @@ return`
 <div class="cardstyling col-lg-4 col-sm-6 portfolio-item">
     <div class="card h-100">
         <small>${data.displayName}</small>
-        <img class="validate card-img-top" src=${data.url} />
+        <img class="validate card-img-top" src=${data.url} style="padding: 1rem !important"/>
         <div class="card-body">
             <h3 class="card-title">${data.title}</h3>
             <h4 class="category">${data.category}</h4>

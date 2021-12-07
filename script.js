@@ -34,14 +34,13 @@ function adCard(data, key){
         return`
             <div class="cardstyling col-lg-4 col-sm-6 portfolio-item">
                 <div class="card h-100">
-                    
-                    <img class="validate card-img-top" src=${data.url}  style="padding: 1rem !important"/> 
+                    <p> &nbsp; &nbsp; <small>By ${data.displayName}</small></p>
+                    <img class="validate card-img-top" src=${data.url} style="padding: 1rem !important" /> 
                     <div class="card-body">
                         <h3 class="card-title">${data.title}</h3>
-                        <small>By ${data.displayName}</small>
                         <h4 class="category">${data.category}</h4>
                         <p class="validate card-text">${data.description}</p>
-                        <h5>Rs. ${data.price}</h5>
+                        <h5>&#8377; ${data.price}</h5>
                         <button type="button" class="btn btn-primary" onclick="signInFirst()" id="primaryBtn">Chat</button>
                         <button type="button" class="btn btn-warning" onclick="signInFirst()" id="secondaryBtn">Add To Favourites</button>
                     </div>
@@ -52,14 +51,13 @@ function adCard(data, key){
         return`
         <div class="cardstyling col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-            
-            <img class="validate card-img-top" src=${data.url}  style="padding: 1rem !important"/>
+            <p> &nbsp; &nbsp; <small>By ${data.displayName}</small></p>
+            <img class="validate card-img-top" src=${data.url} style="padding: 1rem !important"/>
             <div class="card-body">
             <h3 class="card-title">${data.title}</h3>
-            <small>By ${data.displayName}</small>
             <h4 class="category">${data.category}</h4>
             <p class="validate card-text">${data.description}</p>
-            <h5>Rs. ${data.price}</h5>
+            <h5>&#8377; ${data.price}</h5>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" onclick="adChat('${key}',this)" id="primaryBtn">Chat</button>
             <button type="button" class="btn btn-warning" onclick="addToFavourites(this)" id="secondaryBtn">Add To Favourites</button>
         </div>
@@ -139,6 +137,8 @@ function addToFavourites(button){
         title : title,
         url : url
     });
+    window.alert("Product has been added to favourites");
+    window.location.reload();
 }
   
 function signInFirst(){
